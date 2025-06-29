@@ -13,13 +13,13 @@ STAGE_EXPLANATIONS = {
 
 def main():
     st.set_page_config(page_title="Z9 Discovery Tool (Free v1.1)", layout="centered")
-    st.title("🧩 Z9 Discovery Tool – Free 4-Question Emotion Check In v1.1")
-    st.markdown("🆕 *Welcome to v1.1! Try out the new mood selector and get a sneak-peek at upcoming features.*")
+    st.title("🧩 Z9Free Discovery Tool – A 4-Question Check-In")
+    st.markdown("🆕 *Welcome to z9Free! Test out the new wave of self coaching check in tools!*")
     st.markdown("---")
 
     # Mood selector
     mood = st.slider(
-        "🌀 How are you feeling right now? (0 = low, 10 = high)",
+        "🌀 How are you feeling right now (Helps to stretch the results)? (0 = low, 10 = high)",
         0, 10, 5, 1
     )
     st.markdown(f"**Your current mood level:** {mood}/10")
@@ -80,8 +80,8 @@ def main():
               background:#F9F1FF;
               text-align:center;
             ">
-              <h3>🚀 Unlock Tier 1 Opportunities</h3>
-              <p>Go deeper with advanced spiral projections, tailored coaching journeys, and full reports.</p>
+              <h3>🚀 Unlock z9CoachFree</h3>
+              <p>Go deeper with advanced spiral projections, tailored coaching journeys, and trait reports.</p>
               <a href="https://z9discoverytool.streamlit.app/" target="_blank">
                 <button style="
                   background:#8A2BE2;
