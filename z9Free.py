@@ -33,9 +33,9 @@ def main():
     c = st.slider("4️⃣ Do I want to value structure? (Conscientiousness)", 1, 5, 3)
 
     if st.button("📊 Get My Quick Insight"):
-        scores = {"D": d, "I": i, "S": s, "C": c}
+        scores = {k: float(v) for k, v in {"D": d, "I": i, "S": s, "C": c}.items()}
         stage = map_disc_to_stage(d, i, s, c)
-        primary = max(scores, key=scores.get)
+        primary = max(scores, key=lambda k: scores[k])
         score_value = scores[primary]
 
         # Stage & trait explanation
@@ -69,34 +69,62 @@ def main():
         else:
             st.write("No quick opportunities found right now.")
 
-        # Tier 1 teaser
-        st.markdown("---")
-        st.markdown(
-            """
-            <div style="
-              padding:20px;
-              border:2px dashed #8A2BE2;
-              border-radius:8px;
-              background:#F9F1FF;
-              text-align:center;
-            ">
-              <h3>🚀 Unlock z9CoachFree</h3>
-              <p>Go deeper with advanced spiral projections, tailored coaching journeys, and trait reports.</p>
-              <a href="https://z9discoverytool.streamlit.app/" target="_blank">
+    # 🚀 Upgrade CTA: Spiral Start → CoachFree
+    st.markdown("---")
+    st.subheader("🚀 Try More Z9 Paths")
+
+    col2, col3 = st.columns([1, 1])
+
+    with col2:
+        st.markdown("""
+        <div style="
+            padding: 20px;
+            background: #FFFACD;  /* LemonChiffon (light yellow) */
+            border: 2px solid #FFD700;  /* Gold border */
+            border-radius: 10px;
+            text-align: center;
+        ">
+            <a href="https://payhip.com/b/Ct8Nl" target="_blank">
                 <button style="
-                  background:#8A2BE2;
-                  color:#fff;
-                  padding:12px 24px;
-                  border:none;
-                  border-radius:4px;
+                    background-color: #228B22;  /* ForestGreen */
+                    color: white;
+                    padding: 12px 24px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
                 ">
-                  Explore Tier 1 →
+                    🌿 Spiral Start Coaching
                 </button>
-              </a>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col3:
+        st.markdown("""
+        <div style="
+            padding: 20px;
+            background: #FFFACD;  /* LemonChiffon */
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            text-align: center;
+        ">
+            <a href="https://z9coachfree.streamlit.app/" target="_blank">
+                <button style="
+                    background-color: #228B22;
+                    color: white;
+                    padding: 12px 24px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                ">
+                    🌿 Try z9CoachFree
+                </button>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
 
 
 if __name__ == "__main__":
